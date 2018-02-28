@@ -54,7 +54,7 @@ void key_callback(GLFWwindow *window, int key, int scancode, int action, int mod
 
 
 // Window dimensions
-const GLuint WIDTH = 800, HEIGHT = 600;
+const GLuint WIDTH = 600, HEIGHT = 400;
 
 // The MAIN function, from here we start the application and run the game loop
 int main()
@@ -194,17 +194,28 @@ int main()
 		glUniform1i(glGetUniformLocation(ourShader.mProgram, "ourTexture2"), 1);
 
 		glm::mat4 transform;
+		GLfloat time = (GLfloat)glfwGetTime();
+
 		transform = glm::translate(transform, glm::vec3(0.5f, -0.5f, 0.0f));
-		transform = glm::rotate(transform, (GLfloat)glfwGetTime() * 50.0f, glm::vec3(0.0f, 0.0f, 1.0f));
+		transform = glm::rotate(transform, time * 50.0f, glm::vec3(0.0f, 0.0f, 1.0f));
 		std::cout << (GLfloat)glfwGetTime() << std::endl;
 		glUniformMatrix4fv(glGetUniformLocation(ourShader.mProgram, "transform"), 1, GL_FALSE, glm::value_ptr(transform));
 
 		glBindVertexArray(VAO);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-
 		glBindVertexArray(0);
 
-		//glBindTexture(GL_TEXTURE_2D, 0);
+		glBindTexture(GL_TEXTURE_2D, 0);
+
+		//在左上角创建一个图片，并且不断缩放
+		transform = glm::mat4(); //重置转换矩阵
+		transform = glm::translate(transform, glm::vec3(-0.5f, 0.5f, 0.0f));
+		transform = glm::scale(transform, glm::vec3(sin(time), sin(time),1.0f));
+		glUniformMatrix4fv(glGetUniformLocation(ourShader.mProgram, "transform"), 1, GL_FALSE, glm::value_ptr(transform));
+		glBindVertexArray(VAO);
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+		glBindVertexArray(0);
+
 		// Swap the screen buffers
 		glfwSwapBuffers(window);
 	}
