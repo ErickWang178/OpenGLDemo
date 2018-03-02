@@ -21,7 +21,7 @@
 #pragma comment (lib,"glfw3dll.lib")
 
 #pragma comment (lib,"SOIL.lib")
-
+/*
 GLenum glCheckError_(const char *file, int line)
 {
 	GLenum errorCode;
@@ -43,7 +43,7 @@ GLenum glCheckError_(const char *file, int line)
 	return errorCode;
 }
 #define glCheckError() glCheckError_(__FILE__, __LINE__) 
-
+*/
 //创建按键回调函数
 void key_callback(GLFWwindow *window, int key, int scancode, int action, int mode){
 	//当按下ESC时，窗口关闭

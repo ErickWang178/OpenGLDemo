@@ -32,3 +32,6 @@
 *.app
 
 *.opensdf
+*.ilk
+*.pdb
+
