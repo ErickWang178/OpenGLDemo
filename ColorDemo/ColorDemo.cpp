@@ -216,8 +216,9 @@ int main(){
 
 		// Create camera transformations
 		viewMat = camera.GetViewMatrix();
+		viewMat = glm::translate(viewMat, glm::vec3(0.0f, 0.0f, -6.0f));
 		projectionMat = glm::perspective(camera.Zoom, (GLfloat)WIDTH / (GLfloat)HEIGHT, 0.1f, 100.0f);
-		modelMat = glm::rotate(modelMat, time, glm::vec3(0.5f, 0.3f, 0.5f));
+		modelMat = glm::rotate(modelMat, time, glm::vec3(1.0f, 0.0f, 1.0f));
 
 		GLuint viewLoc, modelLoc, projectionLoc;
 		viewLoc = glGetUniformLocation(myShader.mProgram, "view");
@@ -244,6 +245,7 @@ int main(){
 
 		modelMat = glm::mat4();
 		modelMat = glm::translate(modelMat, lightPos);
+		modelMat = glm::translate(modelMat, glm::vec3(glm::cos(time), glm::sin(time),lightPos.z));
 		modelMat = glm::scale(modelMat, glm::vec3(0.1f));
 
 		viewLoc = glGetUniformLocation(lightShader.mProgram, "view");
