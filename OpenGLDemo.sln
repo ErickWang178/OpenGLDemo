@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MatrixDemo", "MatrixDemo\Ma
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ColorDemo", "ColorDemo\ColorDemo.vcxproj", "{3B941255-7F85-40CF-BC0A-F8F99DE02A72}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MaterialDemo", "MaterialDemo\MaterialDemo.vcxproj", "{A0FD00B6-8524-423D-8EA4-6D1DEA125F7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -33,6 +35,10 @@ Global
 		{3B941255-7F85-40CF-BC0A-F8F99DE02A72}.Debug|Win32.Build.0 = Debug|Win32
 		{3B941255-7F85-40CF-BC0A-F8F99DE02A72}.Release|Win32.ActiveCfg = Release|Win32
 		{3B941255-7F85-40CF-BC0A-F8F99DE02A72}.Release|Win32.Build.0 = Release|Win32
+		{A0FD00B6-8524-423D-8EA4-6D1DEA125F7D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A0FD00B6-8524-423D-8EA4-6D1DEA125F7D}.Debug|Win32.Build.0 = Debug|Win32
+		{A0FD00B6-8524-423D-8EA4-6D1DEA125F7D}.Release|Win32.ActiveCfg = Release|Win32
+		{A0FD00B6-8524-423D-8EA4-6D1DEA125F7D}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
